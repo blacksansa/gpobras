@@ -2,6 +2,13 @@ import RevealSection from "../components/reveal-section";
 import TypewriterText from "../components/typewriter-text";
 
 const whatsappNumber = "554199668767";
+const showcaseBeforeAfterImage = "/antes%20e%20depois.png";
+const showcaseImageOne = "/obra.png";
+const showcaseImageTwo = "/obra2.png";
+const showcaseImageThree = "/obra3.png";
+const locationMapUrl =
+  "https://www.google.com/maps/place/-25.216701,-49.279323/data=!4m6!3m5!1s0!7e2!8m2!3d-25.216701!4d-49.279323!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI2LjEyLjUYACD67A0qngEsOTQyNjc3MjcsOTQyOTIxOTUsOTQyOTk1MzIsMTAwNzk2NDk4LDEwMDc5Nzc2MSwxMDA3OTY1MzUsOTQyODQ0NjYsOTQyODA1NzYsOTQyMDczOTQsOTQyMDc1MDYsOTQyMDg1MDYsOTQyMTg2NTMsOTQyMjk4MzksOTQyNzUxNjgsOTQyNzk2MTksMTAwNzkyNTY4LDEwMDc5NjE5M0ICQlI%3D&skid=eaed795a-55bd-438e-bf99-f39a5041c3ca&g_st=awb";
+const locationEmbedUrl = "https://www.google.com/maps?q=-25.216701,-49.279323&z=15&output=embed";
 
 const navigation = [
   { label: "Serviços", href: "#servicos" },
@@ -252,6 +259,10 @@ function Icon({ name }) {
     build: <path d="m14 4 6 6M16 2l2 2-9 9-3 1 1-3 9-9ZM5 19h14" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />,
     flag: <path d="M6 21V4m0 0h11l-2 3 2 3H6" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />,
     arrow: <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />,
+    mail: <path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Zm0 0 8 6 8-6" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />,
+    phone: <path d="M8.5 4.5h3l1 4-2 1.8a14.2 14.2 0 0 0 3.2 3.2l1.8-2 4 1v3a1.5 1.5 0 0 1-1.7 1.5A15.8 15.8 0 0 1 7 6.2 1.5 1.5 0 0 1 8.5 4.5Z" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />,
+    clock: <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-13v4l3 2" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />,
+    location: <path d="M12 21s6-5.7 6-11a6 6 0 1 0-12 0c0 5.3 6 11 6 11Zm0-8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />,
     whatsapp: <path d="M20 11.5A8.5 8.5 0 0 1 7.4 19L3 20l1.1-4.2A8.5 8.5 0 1 1 20 11.5Zm-4.1 2.2c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1-.1.2-.5.7-.6.8-.1.1-.2.2-.4.1a5.9 5.9 0 0 1-1.7-1 6.5 6.5 0 0 1-1.2-1.5c-.1-.2 0-.3.1-.4l.3-.4.2-.3a.4.4 0 0 0 0-.4l-.7-1.6c-.2-.3-.3-.3-.5-.3h-.4a.8.8 0 0 0-.6.3c-.2.3-.8.8-.8 2s.8 2.2 1 2.4c.1.2 1.5 2.4 3.8 3.2.5.2 1 .3 1.3.4.6.2 1.1.1 1.5.1.5-.1 1.2-.5 1.4-1 .2-.6.2-1 .1-1.1-.1-.1-.3-.2-.5-.3Z" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />,
   };
 
@@ -420,23 +431,33 @@ export default function HomePage() {
       <section className="section showcase-section" id="obras">
         <RevealSection className="section-heading">
           <p className="eyebrow">Prova social</p>
-          <h2>Espaço para obras, depoimentos e segmentos atendidos de forma mais visual e marcante.</h2>
+          <h2>Antes e depois de obras que mostram evolução real, estrutura bem executada e resultado final entregue.</h2>
         </RevealSection>
 
         <div className="showcase-layout">
           <RevealSection className="gallery-panel">
-            <div className="gallery-card large">
-              <span>Obra em destaque 01</span>
-              <strong>Espaço para foto real de barracão, galpão ou estrutura metálica.</strong>
+            <div className="gallery-card large gallery-card-comparison">
+              <div
+                className="comparison-photo-shell"
+                aria-label="Comparativo de antes e depois de uma obra, com o início da construção de um lado e o galpão concluído do outro."
+              >
+                <div className="comparison-badges" aria-hidden="true">
+                  <span>Antes</span>
+                  <span>Depois</span>
+                </div>
+                <img className="comparison-photo" src={showcaseBeforeAfterImage} alt="" />
+              </div>
+              <strong>Comparativo visual do início da área de obra com o galpão concluído e pronto para operação.</strong>
+              <p className="comparison-caption">Uma leitura visual simples para reforçar transformação, execução e entrega final.</p>
             </div>
             <div className="gallery-row">
-              <div className="gallery-card">
-                <span>Obra em destaque 02</span>
-                <strong>Imagem de pré-moldado</strong>
+              <div className="gallery-card gallery-card-photo">
+                <span>Galpões e estruturas</span>
+                <img className="gallery-photo" src={showcaseImageOne} alt="Obra em destaque da GM Obras." />
               </div>
-              <div className="gallery-card">
-                <span>Obra em destaque 03</span>
-                <strong>Imagem de laje ou montagem</strong>
+              <div className="gallery-card gallery-card-photo">
+                <span>Reformas em geral</span>
+                <img className="gallery-photo" src={showcaseImageTwo} alt="Segunda obra em destaque da GM Obras." />
               </div>
             </div>
           </RevealSection>
@@ -451,6 +472,10 @@ export default function HomePage() {
                 <strong>{item.author}</strong>
               </RevealSection>
             ))}
+            <RevealSection className="gallery-card gallery-card-photo testimonial-image-card" delay="0.32s">
+              <span>Obras na planta</span>
+              <img className="gallery-photo" src={showcaseImageThree} alt="Obra na planta da GM Obras." />
+            </RevealSection>
           </div>
         </div>
       </section>
@@ -525,16 +550,39 @@ export default function HomePage() {
       </section>
 
       <footer className="site-footer">
-        <div>
+        <div className="footer-map-block">
           <strong>GM Obras</strong>
-          <p>PR-092, Papanduva, Rio Branco do Sul - PR</p>
-          <p>Seg. a Sex., das 09:00 às 18:00</p>
+          <p>Base de atendimento em Rio Branco do Sul - PR, com localização exibida no mapa.</p>
+          <div className="footer-map-frame">
+            <iframe
+              title="Localização da GM Obras"
+              src={locationEmbedUrl}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+          <a className="footer-item footer-map-link" href={locationMapUrl} target="_blank" rel="noreferrer">
+            <Icon name="location" />
+            <span>Ver geolocalização no Google Maps</span>
+          </a>
         </div>
-        <div>
-          <a href="mailto:engenhariagm51@gmail.com">engenhariagm51@gmail.com</a>
-          <a href="tel:+554199668767">(41) 9966-8767</a>
-          <a href={createWhatsappUrl("Quero um orçamento da GM Obras")} target="_blank" rel="noreferrer">
-            WhatsApp GM Obras
+        <div className="footer-contact-list">
+          <a className="footer-item" href="mailto:engenhariagm51@gmail.com">
+            <Icon name="mail" />
+            <span>engenhariagm51@gmail.com</span>
+          </a>
+          <a className="footer-item" href="tel:+554199668767">
+            <Icon name="phone" />
+            <span>(41) 9966-8767</span>
+          </a>
+          <div className="footer-item footer-item-static">
+            <Icon name="clock" />
+            <span>Seg. a Sex., das 09:00 às 18:00</span>
+          </div>
+          <a className="footer-item" href={createWhatsappUrl("Quero um orçamento da GM Obras")} target="_blank" rel="noreferrer">
+            <Icon name="whatsapp" />
+            <span>WhatsApp GM Obras</span>
           </a>
         </div>
       </footer>
